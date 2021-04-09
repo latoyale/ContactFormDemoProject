@@ -1,0 +1,296 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto&display=swap');
+
+// Font Variables
+$montserrat: 'Montserrat', serif;
+$roboto: 'Roboto', sans-serif;  
+
+// Colors
+$bg-color: green;
+$bg-color-body: #e7e7e7;
+$bg-color-main: white;
+$required: #be3600;
+$special-blue: #54a6d4;
+
+// Widths
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+
+/* Using SCSS variables to store breakpoints */
+$screen-xs-min: 320px;
+$screen-sm-min: 544px;
+$screen-md-min: 768px;
+$screen-lg-min: 1024px;
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+/* Create the mixin (usually in a separate .scss file) */
+@mixin breakpoint($media) {
+    @if $media == xs {
+        @media only screen and (min-width: $screen-xs-min) { @content; }
+    }
+    @else if $media == sm {
+        @media only screen and (min-width: $screen-sm-min) { @content; }
+    }
+    @else if $media == md {
+        @media only screen and (min-width: $screen-md-min) { @content; }
+    }
+    @else if $media == lg {
+        @media only screen and (min-width: $screen-lg-min) { @content; }
+    }
+}
+
+//  Styles
+
+body {
+    background-color: $bg-color-main;
+}
+
+main {
+    display: flex; /* or inline-flex */
+    flex-direction: column;
+    background-color: $bg-color-main;
+    max-width: 1070px;
+    width: 100%;
+    margin: 0 auto;
+    font: 100% $roboto;
+    
+
+    header {
+        margin-bottom: 2%;
+    }
+
+    h1 {
+        font-size: 32px;
+        padding: 2rem;
+        font-family: $montserrat;
+        color: $special-blue;
+        
+    }
+
+    footer {
+        margin-top: 25px;
+    }
+
+    input:invalid {
+        border-color: $required;
+    }
+
+    .required {
+        color:$required;
+    }
+    .bg_Shade {
+        background-color: #f8f8f8;
+
+        @include breakpoint(md) {
+            display:flex;
+        }
+    }
+
+    p.text{
+        padding-left: 20px;
+    }
+    
+    .error {
+        background: darkred;
+        color: pink;
+        border: 1px solid $required;
+        width: 100%;
+        border-radius: 0px 0px 3px 3px;
+        font-size: 12px;
+        width: 100%;
+        display: block;
+        position: relative;
+        bottom: 7px;
+
+            @include breakpoint(md) {
+                
+            }
+            @include breakpoint(lg) {
+            
+            }
+    }
+
+.invisible{
+        display: none;
+}
+
+    // Top header section
+
+    .top-row {
+        @include breakpoint(md) {
+            display:flex; 
+        }
+    }
+    .top-background {
+        padding: 8% 0% 3% 0%;
+    }
+
+    .bottom-row {
+        padding: 3rem 0 0 1rem;
+    }
+
+    .image-area {
+        display: flex;
+        background-color: $bg-color-main;
+        padding: 3%;
+        margin-bottom: 2%;
+    
+        .icon {
+            padding-right: 25%;
+        }
+        .icon-text-rt {
+            align-items: top;
+        }
+        .icon-text-lt {
+            align-items: center;
+        }
+        .text {
+            display: flex;
+            font-size: 18px;
+            align-items: center;
+        }
+    }
+
+
+    // Form section
+    .box { 
+        @include border-radius(5px); // controls drop down arrow
+        border: 1px solid #c1c1c1;
+    }
+
+    .labels {
+        display: block;
+        margin-bottom: 1%;
+        margin-top: 2%;
+        font-size: 16px;
+    }
+
+    .form-input {
+        margin-bottom: 1%;
+        width: 100%;
+        padding: 1%;
+        border-radius: 5px;
+        border: 1px solid #c1c1c1;
+        &:hover{
+            box-shadow: 0px 0px 4px 1px $special-blue;
+            color:#000;
+        }
+        font-size: 18px;
+        color: #ddd;
+    }
+
+  
+
+    .form-control {
+        position: relative;
+        }
+    
+
+    // Select DropDown
+    select {
+        /* styling */
+        background-color: $bg-color-main;
+        border: thin solid blue;
+        border-radius: 4px;
+        display: inline-block;
+        font: inherit;
+        line-height: 1.2em;
+        padding: 0.5em 3.5em 0.5em 1em;
+
+        /* reset */
+
+        margin: 0;      
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        
+    }
+    // select button arrow
+    .classic {
+        background-image:
+        linear-gradient(45deg, transparent 50%, white 50%),
+        linear-gradient(135deg, white 50%, transparent 50%),
+        linear-gradient(#ddd 70%, transparent 72%);
+        background-position:
+        calc(100% - 20px) calc(1em + -3px), 
+        calc(100% - 15px) calc(1em + -3px), 
+        calc(100% - .5em) 0.4em;
+        background-size:
+        5px 5px,
+        5px 5px,
+        1.2em 1.2em;
+        background-repeat: no-repeat;
+    }
+
+    // Submit Button
+
+    .submit {
+        border-radius: 5px;
+        background: #1b89c6;
+        padding: 3px; 
+        width: 110px;
+        height: 35px;  
+        margin-top: 25px;
+        margin-bottom: 25px;
+        color: white;
+    }
+
+
+    // Breakpoints
+
+    @include breakpoint(md) {
+        .col1{
+            width: 50%;
+            margin-right: 27px;
+        }
+        .col2{
+            width: 50%;
+        }
+        
+        .row-submit{
+            display: flex;
+        }
+        input.submit{
+            margin-right: 25%;
+        }
+        .col-required{
+            font-size: 12px;
+            color: #ddd;
+            margin-left: 26%;
+            margin-top: 2%;
+        }
+
+    }
+
+    @include breakpoint(lg) {
+        .col{
+            width:50%;
+        }
+        .row{
+            display: flex;
+        }
+        .msg-lg{
+            width: 200%;
+        }
+        .col-left{
+            width: 52%;
+            margin-right: 27px;
+        }
+        .bottom-text{
+            margin-right: 2%;
+        }  
+    }
+
+
+}// end of main
+
+

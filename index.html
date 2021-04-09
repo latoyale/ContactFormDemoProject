@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/reset.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<script src="js/script.js"></script>
+	<title>Contact Form Demo</title>
+</head>
+<body>
+	<main>
+		<header>
+			<h1>Contact Form Demo Project</h1>
+		</header>
+		<section class="top-row row bg_Shade top-background">
+			<div class="col1 image-area box">
+				<p>
+					<img src="images/icon-play.png" alt="blue circular play icon1" class="icon">
+				</p>
+				<p class="text">Text + Right Aligned Image in Two</p>
+			</div>
+			<div class="col2 image-area box">
+				<p>
+					<img src="images/icon-circle.png" alt="blue circle icon2" class="icon">
+				</p>
+				<p class="text">Text + Right Aligned Image</p>
+			</div>
+		</section>
+		<section class="row display">
+			<fieldset>
+			<form action="insert.php" class="forms" name="form" id="form" method="POST">
+				<div class="row form-control" id="form-control">
+					<div class="col-left">
+						<label for="fname" class="labels">Name</label> 
+						<input id="fname" name="fname" type="text"  onfocus="this.value=''" value="Active Input" class="form-input" minlength='5' maxlength='20' required>
+					</div>
+					<div class="col">
+						<label for="email" class="labels" >Email</label> 
+						<input id="email" name="email" type="text"  onfocus="this.value=''" value="Enter your email" class="form-input" required ininvalid="setCustomValidity('Plz enter on Alphabets ')"
+						onchange="try{setCustomValidity('')}catch(e){}" >
+						<span id="spanID" class="error invisible" style="display: none;"> Please provide a valid Email</span>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="col-left">
+						<label for="phone" class="labels" >Phone</label> 
+						<input id="telephone" name="telephone" type="tel" onfocus="this.value=''" value="Enter your phone number" class="form-input" required>
+					</div>
+					<div class="col">
+						<label for="subject" class="labels"> Subject of Inquiry</label> 
+						<select id="subject" name="subject" value="Please select one" class="form-input classic" >
+							<option name="" value="" disabled selected>- Please select one -</option>
+							<option name="A" value="A">
+								A
+							</option>
+							<option name="B" value="B">
+								B
+							</option>
+							<option name="C" value="C">
+								C
+							</option>
+							<option name="D" value="D">
+								D
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+				<label for="subject" class="labels">Message</label> 
+				<textarea cols="30" name="message" rows="10"  class="form-input msg-lg" ></textarea>
+				</div>
+			</div>
+			<div class="row-submit">
+				<div class="col">
+		<button type="submit" value="SUBMIT" class="submit" id="submit" >SUBMIT</button>
+				</div>
+				<div class="col-required">
+				<p><span class="required">* Required Fields.</span> Please be aware that we cannot ensure that communications sent over the Internet are secure. This includes correspondence sent through this form or by email. If you are uncomfortable with such risks, you may contact us by phone instead of using this form.</p>
+				</div>
+			</fieldset>
+			</form>
+		</section>
+
+		<footer>
+			<section class="row bg_Shade">
+					<div class="bottom-row bottom-text">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p><br>
+
+						<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+				</div>
+				<div class="col bottom-row "> <img src="images/thank-you.png" alt="colorful thank you" ></div>
+			</section>
+		</footer>
+	</main>
+</body>
+</html>
